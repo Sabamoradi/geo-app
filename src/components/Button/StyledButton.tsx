@@ -3,29 +3,28 @@ import { colors } from "../../styles/constants";
 import { toRem } from "../../styles/functions";
 import { fontFamilyClass } from "../../styles/mixins";
 
-const StyledInput = styled.input`
-  &.input_wrapper {
+const StyledButton = styled.button`
+  &.button_wrapper {
     padding: ${toRem(12)};
     border: ${toRem(1)} solid ${colors.grayEA};
     border-radius: ${toRem(16)};
     height: ${toRem(48)};
-    text-align: right;
+    width: 100%;
+    text-align: center;
+    background: linear-gradient(255.96deg, #1043a6 0%, #0c317c 100%);
+    color: ${colors.white};
+    font-size: ${toRem(16)};
+    cursor: pointer;
     ${fontFamilyClass};
-    font-size: ${toRem(14)};
 
     &:focus {
       outline: none;
     }
 
-    &.input_error {
-      border-color: red;
+    &:disabled {
+      background: ${colors.disable};
     }
   }
 `;
 
-const Container = styled.div`
-  &.input_container {
-  }
-`;
-
-export { Container, StyledInput };
+export { StyledButton };

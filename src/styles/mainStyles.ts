@@ -1,5 +1,5 @@
 import { createGlobalStyle } from "styled-components";
-import { colors} from './constants';
+import { colors } from "./constants";
 import { toRem } from "./functions";
 
 const MainStyles = createGlobalStyle`
@@ -16,6 +16,10 @@ const MainStyles = createGlobalStyle`
     box-shadow:0 0 0 #CFCFCF14;
     padding:${toRem(42)} ${toRem(16)};
     border-radius:${toRem(16)}
+  }
+
+  .mt-24{
+    margin-top:${toRem(24)}
   }
 `;
 
