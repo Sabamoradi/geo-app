@@ -15,6 +15,10 @@ const StyledInput = styled.input`
     &:focus {
       outline: none;
     }
+
+    &.input_error {
+      border-color: red;
+    }
   }
 `;
 

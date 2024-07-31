@@ -1,4 +1,3 @@
-import { useEffect, useState } from "react";
 import { Container, StyledInput } from "./StyledInput";
 
 interface Props {
@@ -6,15 +5,16 @@ interface Props {
   value: string | number;
   onChange: (e: React.ChangeEvent<HTMLInputElement>) => void;
   autoFocus?: boolean;
-  type:string
+  type: string;
+  isInvalid?: boolean;
 }
 
-const Input = (props:Props) => {
-  const {placeholder,value,onChange,autoFocus,type} = props
+const Input = (props: Props) => {
+  const { placeholder, value, onChange, autoFocus, type ,isInvalid } = props;
   return (
     <Container className="input_container">
       <StyledInput
-        className="input_wrapper"
+        className={`input_wrapper ${(isInvalid && value !== "") && "input_error"}`}
         placeholder={placeholder}
         value={value}
         onChange={onChange}
