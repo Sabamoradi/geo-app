@@ -13,11 +13,17 @@ import {
   SecondPart,
 } from "./StyledSecond";
 import { localTexts } from "../../locals/text";
+import Button from "../Button";
+import { useNavigate } from "react-router-dom";
+import { useAppDispatch } from "../../hooks/useDispatch";
+import { set_StepEvent } from "../../store/general/slice";
 
 const SecondStep = () => {
   const [otpValue, setOtpValue] = useState<string[]>(["", "", "", ""]);
   const inputRefs = useRef<(HTMLInputElement | null)[]>([]);
   const [counter, setCounter] = useState(10);
+  const navigate = useNavigate();
+  const dispatch = useAppDispatch();
 
   const handleInput = (e: ChangeEvent<HTMLInputElement>, index: number) => {
     const { value } = e.target;
@@ -51,6 +57,14 @@ const SecondStep = () => {
     }
   }, [counter]);
 
+  const nextStep = () => {
+    const otpString = "1111";
+    if (otpString === otpValue.join("")) {
+      navigate("/home");
+      dispatch(set_StepEvent((1).toString()));
+    }
+  };
+
   return (
     <div className="global-box">
       <Container className="box_container">
@@ -82,6 +96,11 @@ const SecondStep = () => {
           )}
         </CounterWrapper>
       </SecondPart>
+      <Button
+        contentClassName={"mt-24"}
+        title={localTexts.sendOtp}
+        onClick={() => nextStep()}
+      />
     </div>
   );
 };
