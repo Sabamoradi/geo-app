@@ -1,4 +1,6 @@
 import { createGlobalStyle } from "styled-components";
+import { colors} from './constants';
+import { toRem } from "./functions";
 
 const MainStyles = createGlobalStyle`
   body {
@@ -6,7 +8,14 @@ const MainStyles = createGlobalStyle`
     padding: 0;
     box-sizing: border-box;
     font-family: IRANSansXFaNum, sans-serif;
-    background-color:red;
+    background-color:${colors.grayFA};
+  }
+
+  .global-box {
+    border:${toRem(1)} solid ${colors.grayEA};
+    box-shadow:0 0 0 #CFCFCF14;
+    padding:${toRem(42)} ${toRem(16)};
+    border-radius:${toRem(16)}
   }
 `;
 
