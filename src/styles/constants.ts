@@ -3,5 +3,6 @@ export const colors = {
   white: "#fff",
   black: "#000",
   grayFA:"#FAFAFA",
-  disable:"#c8c9c9"
+  disable:"#c8c9c9",
+  primary:"#1043A6"
 };

@@ -8,7 +8,6 @@ const StyledInput = styled.input`
     padding: ${toRem(12)};
     border: ${toRem(1)} solid ${colors.grayEA};
     border-radius: ${toRem(16)};
-    height: ${toRem(48)};
     text-align: right;
     ${fontFamilyClass};
     font-size: ${toRem(14)};
