@@ -19,6 +19,8 @@ import { useNavigate } from "react-router-dom";
 import { useAppDispatch, useAppSelector } from "../../hooks/useDispatch";
 import {
   selectSetMobileNumber,
+  set_notificationTitle,
+  set_showNotification,
   set_StepEvent,
 } from "../../store/general/slice";
 
@@ -73,6 +75,9 @@ const SecondStep = () => {
       dispatch(set_StepEvent((1).toString()));
     } else {
       setInValid(true);
+      dispatch(set_showNotification(true));
+      dispatch(set_notificationTitle(localTexts.falseOtp));
+      
     }
   };
 

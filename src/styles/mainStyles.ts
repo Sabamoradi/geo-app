@@ -19,6 +19,7 @@ const MainStyles = createGlobalStyle`
     display:flex;
   }
 
+
   .global-box {
     border:${toRem(1)} solid ${colors.grayEA};
     box-shadow:0 0 0 #CFCFCF14;

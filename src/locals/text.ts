@@ -12,6 +12,7 @@ export const localTexts = {
     confirm:'تایید',
     doNotGetOtp:'کد را دریافت نکردید؟',
     changePhoneNumber:'تغییر شماره همراه',
-    signUp:'ثبت نام'
+    signUp:'ثبت نام',
+    falseOtp:'کد وارد شده اشتباه میباشد'
   };
   
