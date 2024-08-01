@@ -15,6 +15,9 @@ const MainStyles = createGlobalStyle`
     box-sizing: border-box !important;
     -webkit-tap-highlight-color: transparent;
   }
+  .d-flex{
+    display:flex;
+  }
 
   .global-box {
     border:${toRem(1)} solid ${colors.grayEA};
@@ -29,6 +32,7 @@ const MainStyles = createGlobalStyle`
 
     .text_wrapper{
       text-align:center;
+      direction:rtl;
       h2 {
         font-size:${toRem(16)};
         color:${colors.black31}
@@ -36,6 +40,12 @@ const MainStyles = createGlobalStyle`
       p {
         font-size:${toRem(14)};
         color:${colors.gray7e}
+      }
+      .link{
+        color: ${colors.primary};
+        font-weight:bold;
+        cursor: pointer;
+        text-decoration: underline;
       }
     }
   }

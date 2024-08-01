@@ -92,6 +92,9 @@ const SecondStep = () => {
       <div className="text_wrapper mt-32 mb-32">
         <h2>{localTexts.fillOtp}</h2>
         <p>کد تایید برای شماره {mobileNumber} پیامک شد</p>
+        <p className="link" onClick={() => dispatch(set_StepEvent((1).toString()))}>
+          {localTexts.changePhoneNumber}
+        </p>
       </div>
       <Container className="box_container">
         {otpValue.map((value, index) => (

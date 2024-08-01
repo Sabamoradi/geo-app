@@ -39,6 +39,7 @@ const CounterWrapper = styled.div`
 const CountItem = styled.div`
   color: ${colors.primary};
   cursor: pointer;
+  text-decoration: underline;
 `;
 
 const TopSection = styled.div`

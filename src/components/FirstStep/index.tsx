@@ -52,8 +52,9 @@ const FirstStep = () => {
         width={'100%'}
       />
 
-      <div className="text_wrapper mt-32">
+      <div className="text_wrapper d-flex mt-32">
         <p>{localTexts.doNotHaveAccount}</p>
+        <p className="link">{localTexts.signUp}</p>
       </div>
     </div>
   );
