@@ -8,7 +8,6 @@ interface Props {
 
 const HomeResult = (props: Props) => {
   const { item } = props;
-  console.log(item);
 
   return (
     <StyledHomeResult

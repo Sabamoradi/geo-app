@@ -14,6 +14,7 @@ interface Props {
   width?: string;
   height?: string;
   fullWidth?: boolean;
+  customClass?:string;
 }
 
 const Input = React.forwardRef<HTMLInputElement, Props>((props, ref) => {
@@ -30,15 +31,14 @@ const Input = React.forwardRef<HTMLInputElement, Props>((props, ref) => {
     width,
     height,
     fullWidth,
+    customClass,
     ...rest
   } = props;
   return (
     <Container className="input_container">
       <StyledInput
         ref={ref}
-        className={`input_wrapper ${
-          isInvalid && value !== "" && "input_error"
-        }`}
+        className={`input_wrapper ${customClass} ${isInvalid && value !== "" && "input_error"}`}
         placeholder={placeholder}
         value={value}
         onChange={onChange}

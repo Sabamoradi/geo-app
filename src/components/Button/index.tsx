@@ -20,7 +20,7 @@ const Button = (props: Props) => {
       disabled={disabled || loading}
       style={{ width: width }}
     >
-      {icon && <i className={icon} />}
+      {icon && <img src={icon} />}
       {loading ? "loading" : title}
     </StyledButton>
   );

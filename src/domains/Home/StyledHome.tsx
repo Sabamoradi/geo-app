@@ -20,14 +20,31 @@ const HomeBox = styled.div`
   box-shadow: ${toRem(16)} ${toRem(16)} ${toRem(16)} ${toRem(16)}
     ${colors.grayE6};
   border-radius: ${toRem(16)};
-  padding: ${toRem(42)} ${toRem(16)};
-  width: 75%;
+  padding: ${toRem(42)} ${toRem(24)};
+  width: 70%;
 `;
 
 const SearchWrapper = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
-  direction:rtl;
+  direction: rtl;
+  margin-top: ${toRem(32)};
 `;
-export { HomeContainer, HomeBox, SearchWrapper };
+
+const TitleWrapper = styled.div`
+  text-align: center;
+  h2 {
+    margin: 0;
+    font-size: ${toRem(20)};
+    font-weight: 500;
+    color: ${colors.black31};
+  }
+
+  p {
+    font-size: ${toRem(16)};
+    color: ${colors.gray7e};
+  }
+`;
+
+export { HomeContainer, HomeBox, SearchWrapper, TitleWrapper };

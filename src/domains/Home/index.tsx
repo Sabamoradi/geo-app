@@ -1,14 +1,23 @@
 import { useState } from "react";
 import Input from "../../components/Input";
 import { localTexts } from "../../locals/text";
-import { HomeBox, HomeContainer, SearchWrapper } from "./StyledHome";
+import {
+  HomeBox,
+  HomeContainer,
+  SearchWrapper,
+  TitleWrapper,
+} from "./StyledHome";
 import Button from "../../components/Button";
 import { useAppDispatch, useAppSelector } from "../../hooks/useDispatch";
 import { getIpThunk } from "../../store/general/thunks";
 import { isIPAddress } from "../../utils/validation";
 import useThrottling from "../../hooks/useThrottling";
-import { selectLoadingSearchIp, selectSearchIp } from "../../store/general/slice";
+import {
+  selectLoadingSearchIp,
+  selectSearchIp,
+} from "../../store/general/slice";
 import HomeResult from "../../components/HomeResult";
+const searchIcon = require("../../assets/icons/search.svg").default;
 
 const Home = () => {
   const [searchData, setSearchData] = useState("");
@@ -37,6 +46,10 @@ const Home = () => {
   return (
     <HomeContainer>
       <HomeBox>
+        <TitleWrapper>
+          <h2>{localTexts.findIpTitle}</h2>
+          <p>{localTexts.findTpDesc}</p>
+        </TitleWrapper>
         <SearchWrapper>
           <Input
             placeholder={localTexts.search}
@@ -44,15 +57,18 @@ const Home = () => {
             type={"string"}
             fullWidth={true}
             onChange={handleInputChange}
+            customClass="border-left"
           />
           <Button
             title="search"
             loading={loadingSearch}
             onClick={() => searchIp()}
+            icon={searchIcon}
+            contentClassName={'border-right'}
           />
         </SearchWrapper>
 
-        <HomeResult item={searchIps}/>
+        <HomeResult item={searchIps} />
       </HomeBox>
     </HomeContainer>
   );

@@ -9,10 +9,10 @@ const StyledHomeResult = styled.div`
     min-height: 0;
     transition: all 0.3s;
     overflow: hidden;
-    padding:${toRem(16)};
     border-radius:${toRem(12)};
-
+    
     &.result_height {
+      padding:${toRem(16)};
       min-height: ${toRem(100)};
 
     }

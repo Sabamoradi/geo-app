@@ -49,6 +49,15 @@ const MainStyles = createGlobalStyle`
   .mb-32{
     margin-bottom:${toRem(32)}
   }
+
+  .border-right{
+    border-top-right-radius: 0px !important;
+    border-bottom-right-radius: 0px !important;
+  }
+  .border-left{
+    border-top-left-radius: 0px !important;
+    border-bottom-left-radius: 0px !important;
+  }
 `;
 
 export default MainStyles;
