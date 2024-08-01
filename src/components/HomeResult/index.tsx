@@ -1,3 +1,4 @@
+import MapComponent from "../Map";
 import { StyledHomeResult } from "./StyledHomeResult";
 
 //TODO
@@ -11,9 +12,11 @@ const HomeResult = (props: Props) => {
 
   return (
     <StyledHomeResult
-      className={`result_wrapper ${item !== null && "result_height"}`}
+      className={`result_wrapper mt-32 ${item !== null && "result_height"}`}
     >
-      hello
+      {item !== null && (
+        <MapComponent lat={item.latitude} lng={item.longitude} />
+      )}
     </StyledHomeResult>
   );
 };

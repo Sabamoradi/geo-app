@@ -3,6 +3,8 @@ import "./assets/font/font.css";
 import { BrowserRouter, Navigate, Route, Routes } from "react-router-dom";
 import Login from "./domains/Login";
 import Home from "./domains/Home";
+import 'leaflet/dist/leaflet.css';
+
 
 const App = () => {
   return (
