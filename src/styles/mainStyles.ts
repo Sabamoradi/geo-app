@@ -11,15 +11,43 @@ const MainStyles = createGlobalStyle`
     background-color:${colors.grayFA};
   }
 
+  * {
+    box-sizing: border-box !important;
+    -webkit-tap-highlight-color: transparent;
+  }
+
   .global-box {
     border:${toRem(1)} solid ${colors.grayEA};
     box-shadow:0 0 0 #CFCFCF14;
     padding:${toRem(42)} ${toRem(16)};
-    border-radius:${toRem(16)}
+    border-radius:${toRem(16)};
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width:20%;
+    background: ${colors.white};
+
+    .text_wrapper{
+      text-align:center;
+      h2 {
+        font-size:${toRem(16)};
+        color:${colors.black31}
+      }
+      p {
+        font-size:${toRem(14)};
+        color:${colors.gray7e}
+      }
+    }
   }
 
   .mt-24{
     margin-top:${toRem(24)}
+  }
+  .mt-32{
+    margin-top:${toRem(32)}
+  }
+  .mb-32{
+    margin-bottom:${toRem(32)}
   }
 `;
 

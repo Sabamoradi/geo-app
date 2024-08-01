@@ -11,17 +11,34 @@ interface Props {
   maxLength?: number;
   onFocus?: (e: React.ChangeEvent<HTMLInputElement>) => void;
   onKeyUp?: (e: React.KeyboardEvent<HTMLInputElement>) => void;
-  width?:string;
-  height?:string;
+  width?: string;
+  height?: string;
+  fullWidth?: boolean;
 }
 
 const Input = React.forwardRef<HTMLInputElement, Props>((props, ref) => {
-  const { placeholder, value, onChange, autoFocus, type, isInvalid, maxLength, onFocus,onKeyUp,width,height, ...rest } = props;
+  const {
+    placeholder,
+    value,
+    onChange,
+    autoFocus,
+    type,
+    isInvalid,
+    maxLength,
+    onFocus,
+    onKeyUp,
+    width,
+    height,
+    fullWidth,
+    ...rest
+  } = props;
   return (
     <Container className="input_container">
       <StyledInput
         ref={ref}
-        className={`input_wrapper ${(isInvalid && value !== "") && "input_error"}`}
+        className={`input_wrapper ${
+          isInvalid && value !== "" && "input_error"
+        }`}
         placeholder={placeholder}
         value={value}
         onChange={onChange}
@@ -30,7 +47,10 @@ const Input = React.forwardRef<HTMLInputElement, Props>((props, ref) => {
         maxLength={maxLength}
         onFocus={onFocus}
         onKeyUp={onKeyUp}
-        style={{ width: `${width}px` , height:`${height}px`}}
+        style={{
+          width: fullWidth ? "100%" : `${width}px`,
+          height: `${height}px`,
+        }}
         {...rest}
       />
     </Container>

@@ -17,9 +17,17 @@ const HomeContainer = styled.div`
 
 const HomeBox = styled.div`
   background-color: ${colors.white};
-  box-shadow: ${toRem(16)} ${toRem(16)} ${toRem(16)} ${toRem(16)}-5px 9px 23px 0px ${colors.grayCf};
+  box-shadow: ${toRem(16)} ${toRem(16)} ${toRem(16)} ${toRem(16)}
+    ${colors.grayE6};
   border-radius: ${toRem(16)};
   padding: ${toRem(42)} ${toRem(16)};
   width: 75%;
 `;
-export { HomeContainer, HomeBox };
+
+const SearchWrapper = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  direction:rtl;
+`;
+export { HomeContainer, HomeBox, SearchWrapper };

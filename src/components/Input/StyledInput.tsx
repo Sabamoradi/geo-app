@@ -7,7 +7,7 @@ const StyledInput = styled.input`
   &.input_wrapper {
     padding: ${toRem(12)};
     border: ${toRem(1)} solid ${colors.grayEA};
-    border-radius: ${toRem(16)};
+    border-radius: ${toRem(8)};
     text-align: right;
     ${fontFamilyClass};
     font-size: ${toRem(14)};
@@ -24,6 +24,9 @@ const StyledInput = styled.input`
 
 const Container = styled.div`
   &.input_container {
+    width: 100%;
+    position: relative;
+    height: inherit;
   }
 `;
 
