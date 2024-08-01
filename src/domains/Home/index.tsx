@@ -5,6 +5,7 @@ import {
   ErrorTitle,
   HomeBox,
   HomeContainer,
+  HomeWrapper,
   SearchWrapper,
   TitleWrapper,
 } from "./StyledHome";
@@ -60,32 +61,35 @@ const Home = () => {
   };
 
   return (
-    <HomeContainer>
-      <HomeBox>
-        <TitleWrapper>
-          <h2>{localTexts.findIpTitle}</h2>
-          <p>{localTexts.findTpDesc}</p>
-        </TitleWrapper>
-        <SearchWrapper>
-          <Input
-            placeholder={localTexts.search}
-            value={searchData}
-            type={"string"}
-            fullWidth={true}
-            onChange={handleInputChange}
-            customClass="border-left"
-          />
-          <Button
-            loading={loadingSearch}
-            onClick={() => searchIp()}
-            icon={searchIcon}
-            contentClassName={"border-right"}
-          />
-        </SearchWrapper>
-        {stopSearch.showError && <ErrorTitle>{stopSearch.title}</ErrorTitle>}
-        <HomeResult item={searchIps} />
-      </HomeBox>
-    </HomeContainer>
+    <>
+      <HomeContainer />
+      <HomeWrapper>
+        <HomeBox>
+          <TitleWrapper>
+            <h2>{localTexts.findIpTitle}</h2>
+            <p>{localTexts.findTpDesc}</p>
+          </TitleWrapper>
+          <SearchWrapper>
+            <Input
+              placeholder={localTexts.search}
+              value={searchData}
+              type={"string"}
+              fullWidth={true}
+              onChange={handleInputChange}
+              customClass="border-left"
+            />
+            <Button
+              loading={loadingSearch}
+              onClick={() => searchIp()}
+              icon={searchIcon}
+              contentClassName={"border-right"}
+            />
+          </SearchWrapper>
+          {stopSearch.showError && <ErrorTitle>{stopSearch.title}</ErrorTitle>}
+          <HomeResult item={searchIps} />
+        </HomeBox>
+      </HomeWrapper>
+    </>
   );
 };
 

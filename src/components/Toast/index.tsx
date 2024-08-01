@@ -1,4 +1,4 @@
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { ContainerToast } from "./StyledToast";
 
 export type ToastStatus = "success" | "warning" | "error" | "info";
@@ -11,23 +11,19 @@ interface Props {
 
 const Toast = (props: Props) => {
   const { toastTitle, toastType, dismissTime } = props;
+  const [visible, setVisible] = useState(true);
+
 
   useEffect(() => {
-    let interval: ReturnType<typeof setInterval>;
-
-    if (toastTitle.length) {
-      interval = setInterval(() => {
-        console.log();
-      }, dismissTime);
-    }
-    return () => {
-      clearInterval(interval);
-    };
+    const timer = setTimeout(() => {
+      setVisible(false);
+    }, dismissTime);
+    return () => clearTimeout(timer);
   }, [toastTitle, dismissTime]);
 
   return (
     <>
-      <ContainerToast className={`${toastType}-bg`}>
+      <ContainerToast visible={visible} className={`${toastType}-bg`}>
         <p>{toastTitle}</p>
       </ContainerToast>
     </>

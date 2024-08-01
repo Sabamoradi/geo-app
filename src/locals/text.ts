@@ -13,6 +13,6 @@ export const localTexts = {
     doNotGetOtp:'کد را دریافت نکردید؟',
     changePhoneNumber:'تغییر شماره همراه',
     signUp:'ثبت نام',
-    falseOtp:'کد وارد شده اشتباه میباشد'
+    falseOtp:'کد وارد شده اشتباه است'
   };
   

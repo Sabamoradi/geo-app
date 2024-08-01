@@ -5,14 +5,21 @@ import { toRem } from "../../styles/functions";
 const backgroundImage = require("../../assets/img/Backgroundpattern.png");
 
 const HomeContainer = styled.div`
-  width: 100vw;
   height: 100vh;
   background-image: url(${backgroundImage});
   background-size: contain;
-  background-repeat: repeat;
+  position: absolute;
+  width: 100%;
+  left: 0;
+  top: 0;
+`;
+
+const HomeWrapper = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
+  position: relative;
+  height: 100vh;
 `;
 
 const HomeBox = styled.div`
@@ -56,4 +63,11 @@ const TitleWrapper = styled.div`
   }
 `;
 
-export { HomeContainer, HomeBox, SearchWrapper, TitleWrapper , ErrorTitle };
+export {
+  HomeContainer,
+  HomeBox,
+  SearchWrapper,
+  TitleWrapper,
+  ErrorTitle,
+  HomeWrapper,
+};
