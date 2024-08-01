@@ -1,4 +1,14 @@
 export const IranMobileNumber = (phoneNumber: string): boolean => {
-    const regex = /^09\d{9}$/;
-    return regex.test(phoneNumber);
-  };
+  const regex = /^09\d{9}$/;
+  return regex.test(phoneNumber);
+};
+
+export const isIPAddress = (ip: string): boolean => {
+  console.log(ip);
+
+  const ipv4Pattern = /^(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)$/;
+
+  const ipv6Pattern = /^(?:[a-fA-F0-9]{1,4}:){7}[a-fA-F0-9]{1,4}$|^(?:[a-fA-F0-9]{1,4}:){1,7}:$|^(?:[a-fA-F0-9]{1,4}:){1,6}:[a-fA-F0-9]{1,4}$|^(?:[a-fA-F0-9]{1,4}:){1,5}(?::[a-fA-F0-9]{1,4}){1,2}$|^(?:[a-fA-F0-9]{1,4}:){1,4}(?::[a-fA-F0-9]{1,4}){1,3}$|^(?:[a-fA-F0-9]{1,4}:){1,3}(?::[a-fA-F0-9]{1,4}){1,4}$|^(?:[a-fA-F0-9]{1,4}:){1,2}(?::[a-fA-F0-9]{1,4}){1,5}$|^[a-fA-F0-9]{1,4}:(?::[a-fA-F0-9]{1,4}){1,6}$|^:(?::[a-fA-F0-9]{1,4}){1,7}$|^(?:[a-fA-F0-9]{1,4}:){1,7}[a-fA-F0-9]{1,4}(?:%[0-9a-zA-Z]{1,})?$|^(?:[a-fA-F0-9]{1,4}:){6,7}(?::[a-fA-F0-9]{1,4}){0,1}(:[0-9a-fA-F]{1,4}){1,4}(?:%[0-9a-zA-Z]{1,})?$/;
+
+  return ipv4Pattern.test(ip) || ipv6Pattern.test(ip);
+};
