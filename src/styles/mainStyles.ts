@@ -24,7 +24,7 @@ const MainStyles = createGlobalStyle`
     display: flex;
     flex-direction: column;
     align-items: center;
-    width:20%;
+    width:${toRem(375)};
     background: ${colors.white};
 
     .text_wrapper{
@@ -39,6 +39,7 @@ const MainStyles = createGlobalStyle`
       }
     }
   }
+  
 
   .mt-24{
     margin-top:${toRem(24)}

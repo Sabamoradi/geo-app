@@ -2,6 +2,7 @@ import { useState } from "react";
 import Input from "../../components/Input";
 import { localTexts } from "../../locals/text";
 import {
+  ErrorTitle,
   HomeBox,
   HomeContainer,
   SearchWrapper,
@@ -21,21 +22,36 @@ const searchIcon = require("../../assets/icons/search.svg").default;
 
 const Home = () => {
   const [searchData, setSearchData] = useState("");
+  const [stopSearch, setSearchStop] = useState({
+    title: "",
+    showError: false,
+  });
   const dispatch = useAppDispatch();
   const requestLimit = useThrottling(5, 60000);
   const loadingSearch = useAppSelector(selectLoadingSearchIp);
   const searchIps = useAppSelector(selectSearchIp);
 
   const searchIp = () => {
+    let errorData = {
+      title: "",
+      showError: false,
+    };
     if (requestLimit()) {
       if (isIPAddress(searchData)) {
-        console.log("yes");
         dispatch(getIpThunk(searchData));
       } else {
-        console.log("invalid ip");
+        errorData = {
+          title: "لطفا آی پی مورد نظر را جستجو کنید",
+          showError: true,
+        };
+        setSearchStop(errorData);
       }
     } else {
-      console.log("limit");
+      errorData = {
+        title: "سرچ بیش از حد مجاز است",
+        showError: true,
+      };
+      setSearchStop(errorData);
     }
   };
 
@@ -60,14 +76,13 @@ const Home = () => {
             customClass="border-left"
           />
           <Button
-            title="search"
             loading={loadingSearch}
             onClick={() => searchIp()}
             icon={searchIcon}
-            contentClassName={'border-right'}
+            contentClassName={"border-right"}
           />
         </SearchWrapper>
-
+        {stopSearch.showError && <ErrorTitle>{stopSearch.title}</ErrorTitle>}
         <HomeResult item={searchIps} />
       </HomeBox>
     </HomeContainer>

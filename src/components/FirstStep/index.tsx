@@ -4,17 +4,22 @@ import { localTexts } from "../../locals/text";
 import { IranMobileNumber } from "../../utils/validation";
 import Button from "../Button";
 import { useAppDispatch, useAppSelector } from "../../hooks/useDispatch";
-import { selectStep_Event, set_StepEvent } from "../../store/general/slice";
+import {
+  selectSetMobileNumber,
+  selectStep_Event,
+  set_mobileNumber,
+  set_StepEvent,
+} from "../../store/general/slice";
 const logo = require("../../assets/icons/Logo.svg").default;
 
 const FirstStep = () => {
-  const [inputValue, setInputValue] = useState("");
   const [isInvalid, setIsInvalid] = useState(false);
   const dispatch = useAppDispatch();
   const select_step = useAppSelector(selectStep_Event);
+  const selectMobileNumber = useAppSelector(selectSetMobileNumber);
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    setInputValue(e.target.value);
+    dispatch(set_mobileNumber(e.target.value));
     setIsInvalid(e.target.value !== "" && !IranMobileNumber(e.target.value));
   };
 
@@ -33,7 +38,7 @@ const FirstStep = () => {
       </div>
       <Input
         placeholder={localTexts.mobileNum}
-        value={inputValue}
+        value={selectMobileNumber}
         type={"tel"}
         onChange={handleInputChange}
         isInvalid={isInvalid}
@@ -42,7 +47,9 @@ const FirstStep = () => {
       <Button
         contentClassName={"mt-24"}
         title={localTexts.sendOtp}
+        disabled={isInvalid === true || selectMobileNumber.length === 0}
         onClick={() => nextStep()}
+        width={'100%'}
       />
 
       <div className="text_wrapper mt-32">

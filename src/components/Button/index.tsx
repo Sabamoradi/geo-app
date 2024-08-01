@@ -21,7 +21,7 @@ const Button = (props: Props) => {
       style={{ width: width }}
     >
       {icon && <img src={icon} />}
-      {loading ? "loading" : title}
+      {loading ? "" : title}
     </StyledButton>
   );
 };

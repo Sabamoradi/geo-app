@@ -17,6 +17,7 @@ const Container = styled.div`
 const SecondPart = styled.div`
   display: flex;
   padding: ${toRem(16)} ${toRem(8)};
+  width: 100%;
 `;
 
 const CounterWrapper = styled.div`
@@ -24,6 +25,15 @@ const CounterWrapper = styled.div`
   font-size: ${toRem(14)};
   color: ${colors.primary};
   font-weight: 500;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  direction: rtl;
+
+  p {
+    font-size: ${toRem(14)};
+    color: ${colors.black31};
+  }
 `;
 
 const CountItem = styled.div`
@@ -31,4 +41,17 @@ const CountItem = styled.div`
   cursor: pointer;
 `;
 
-export { Container, SecondPart, CounterWrapper,CountItem };
+const TopSection = styled.div`
+  display: flex;
+  position: relative;
+  width: 100%;
+  align-items: center;
+  justify-content: center;
+  .left_icon {
+    position: absolute;
+    left: 0;
+    cursor: pointer;
+  }
+`;
+
+export { Container, SecondPart, CounterWrapper, CountItem, TopSection };

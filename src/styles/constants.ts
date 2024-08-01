@@ -8,5 +8,6 @@ export const colors = {
   grayFA:"#FAFAFA",
   disable:"#c8c9c9",
   primary:"#1043A6",
-  black31:"#313235"
+  black31:"#313235",
+  red:"#c6243d"
 };

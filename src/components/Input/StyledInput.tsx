@@ -17,7 +17,7 @@ const StyledInput = styled.input`
     }
 
     &.input_error {
-      border-color: red;
+      border:${toRem(2)} solid ${colors.red};
     }
   }
 `;

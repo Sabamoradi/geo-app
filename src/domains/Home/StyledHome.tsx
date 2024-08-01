@@ -22,6 +22,10 @@ const HomeBox = styled.div`
   border-radius: ${toRem(16)};
   padding: ${toRem(42)} ${toRem(24)};
   width: 70%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
 `;
 
 const SearchWrapper = styled.div`
@@ -29,9 +33,14 @@ const SearchWrapper = styled.div`
   align-items: center;
   justify-content: center;
   direction: rtl;
+  width: 70%;
   margin-top: ${toRem(32)};
 `;
 
+const ErrorTitle = styled.p`
+  font-size: ${toRem(12)};
+  color: ${colors.red};
+`;
 const TitleWrapper = styled.div`
   text-align: center;
   h2 {
@@ -47,4 +56,4 @@ const TitleWrapper = styled.div`
   }
 `;
 
-export { HomeContainer, HomeBox, SearchWrapper, TitleWrapper };
+export { HomeContainer, HomeBox, SearchWrapper, TitleWrapper , ErrorTitle };
