@@ -15,7 +15,7 @@ export interface State {
 const initialState: State = {
   data: "",
   step_Event: sessionStorage.getItem("step") || "1",
-  searchedIp:{},
+  searchedIp:null,
   searchIpLoading:false
 };
 

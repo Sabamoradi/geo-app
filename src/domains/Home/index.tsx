@@ -7,13 +7,15 @@ import { useAppDispatch, useAppSelector } from "../../hooks/useDispatch";
 import { getIpThunk } from "../../store/general/thunks";
 import { isIPAddress } from "../../utils/validation";
 import useThrottling from "../../hooks/useThrottling";
-import { selectLoadingSearchIp } from "../../store/general/slice";
+import { selectLoadingSearchIp, selectSearchIp } from "../../store/general/slice";
+import HomeResult from "../../components/HomeResult";
 
 const Home = () => {
   const [searchData, setSearchData] = useState("");
   const dispatch = useAppDispatch();
   const requestLimit = useThrottling(5, 60000);
   const loadingSearch = useAppSelector(selectLoadingSearchIp);
+  const searchIps = useAppSelector(selectSearchIp);
 
   const searchIp = () => {
     if (requestLimit()) {
@@ -49,6 +51,8 @@ const Home = () => {
             onClick={() => searchIp()}
           />
         </SearchWrapper>
+
+        <HomeResult item={searchIps}/>
       </HomeBox>
     </HomeContainer>
   );
