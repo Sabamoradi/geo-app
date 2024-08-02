@@ -32,10 +32,13 @@ const ContainerToast = styled.div<{ visible: boolean }>`
   width: ${toRem(250)};
   bottom: ${toRem(40)};
   right: ${toRem(12)};
-  animation: ${({ visible }) => (visible ? showToast : hideToast)} 0.5s forwards;
+  animation: ${({ visible }) => (visible ? showToast : hideToast)} 0.6s forwards;
   height: ${toRem(50)};
   color: ${colors.white};
   text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 
   &.error-bg {
     background-color: ${colors.red};

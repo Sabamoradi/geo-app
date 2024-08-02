@@ -52,11 +52,16 @@ const SecondStep = () => {
   const handleKeyUp = (e: KeyboardEvent<HTMLInputElement>, index: number) => {
     if (e.key === "Backspace" && index > 0 && otpValue[index] === "") {
       inputRefs.current[index - 1]?.focus();
+      setInValid(false)
+      dispatch(set_showNotification(false));
     }
   };
 
   const resetCounter = () => {
     setCounter(10);
+    setOtpValue(["","","",""]);
+    setInValid(false)
+    dispatch(set_showNotification(false));
   };
 
   useEffect(() => {
