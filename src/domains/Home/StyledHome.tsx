@@ -20,6 +20,10 @@ const HomeWrapper = styled.div`
   justify-content: center;
   position: relative;
   height: 100vh;
+  padding:${toRem(10)};
+  @media (max-width: 592px) {
+    height: 100%;
+  }
 `;
 
 const HomeBox = styled.div`

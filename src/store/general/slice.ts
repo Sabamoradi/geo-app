@@ -8,7 +8,7 @@ import { SearchIp } from "./types";
 export interface State {
   data: string;
   step_Event: string | null;
-  searchedIp: SearchIp | any;
+  searchedIp: SearchIp | null;
   searchIpLoading:boolean;
   mobileNumber:string;
   showNotification:boolean;

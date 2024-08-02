@@ -12,11 +12,13 @@ const MapComponent = (props: Props) => {
   const { lat, lng, zoom } = props;
 
   const position: [number, number] = [lat, lng];
+  console.log(position,'position');
+  
 
   return (
     <MapContainer
       center={position}
-      zoom={zoom}
+      zoom={13}
       style={{ height: "147px", width: "161px" }}
     >
       <TileLayer
@@ -25,7 +27,7 @@ const MapComponent = (props: Props) => {
       />
       <Marker position={position}>
         <Popup>
-          A custom marker at {lat}, {lng}.
+          A custom marker at {position[0]}, {position[1]}.
         </Popup>
       </Marker>
     </MapContainer>
